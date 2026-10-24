@@ -1,0 +1,1 @@
+# scanner-ljk-to-tka-smp
