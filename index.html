@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Scanner LJK OMR</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2563eb"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Scanner LJK"><link rel="icon" type="image/png" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
 <style>
 :root{--bg:#f4f6f9;--fg:#1a1d23;--card:#fff;--bd:#d6dbe3;--ac:#2563eb;--ok:#15803d;--bad:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161a;--fg:#e8eaee;--card:#1e2127;--bd:#363c46;--ac:#6ea0ff;--ok:#4ade80;--bad:#f87171}}
@@ -645,4 +646,6 @@ if(o.tys==null&&(o.npg!=null||o.npgk!=null||o.nbs!=null)){const a=+o.npg||0,b=+o
 document.querySelectorAll('.p').forEach(e=>{if(o[e.id]!=null)e.value=o[e.id];e.oninput=()=>{sv();if(/^cal/.test(e.id))calDraw();else sheet();rr();$('tv').textContent=$('thr').value+'%'}});
 if(Array.isArray(o.inc))TY.forEach(k=>$('inc_'+k).checked=o.inc.includes(k)||(k=='ts'&&!o.v3));R=(o.R||[]).map(mig);LOGO=o.logo||'';$('tv').textContent=$('thr').value+'%';
 tbuild();kbuild();calDraw();ksParse();adjSetup();sheet();rr();camPerm();
+
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
 </script></main></body></html>
